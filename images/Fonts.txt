@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Eraser
+Author: David Rakowski
+Url: http://www.fontsquirrel.com/fonts/eraser
+
+Font: Learning Curve Pro
+Author: Blue Vinyl Fonts
+Url: http://www.fontsquirrel.com/fonts/learning-curve-pro

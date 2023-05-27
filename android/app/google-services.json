@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "500902193890",
+    "project_id": "biasha-said",
+    "storage_bucket": "biasha-said.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500902193890:android:ecccf5b6e34c106cb58cbb",
+        "android_client_info": {
+          "package_name": "com.example.trial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500902193890-qit2m6baufjp4t96877rfn95fp0kqhdu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCi1mW2S8zs37jjyMNx3khNnKh3sfAT9yo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500902193890-qit2m6baufjp4t96877rfn95fp0kqhdu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

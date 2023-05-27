@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>500902193890-5bdlfq8ubprlu21j7sirmp95j2bnfqpe.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.500902193890-5bdlfq8ubprlu21j7sirmp95j2bnfqpe</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBlj2x6xCnYwvtEou_OehDjL_DLKBDwGnY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>500902193890</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.trial</string>
+	<key>PROJECT_ID</key>
+	<string>biasha-said</string>
+	<key>STORAGE_BUCKET</key>
+	<string>biasha-said.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:500902193890:ios:cbb1d55f50d7f18fb58cbb</string>
+</dict>
+</plist>
