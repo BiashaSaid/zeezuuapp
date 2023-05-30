@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zeezuu/screens/homepage.dart';
 import 'package:zeezuu/screens/profile.dart';
 
 class LogIn extends StatefulWidget {
@@ -59,12 +60,7 @@ class _LogInState extends State<LogIn> {
                               children: [
                                 CircleAvatar(
                                   radius: 40,
-                                  backgroundImage: AssetImage('image/look.png'),
-                                  child: Icon(
-                                    Icons.person,
-                                    size: 48,
-                                    color: Color.fromRGBO(207, 154, 122, 1),
-                                  ),
+                                  child: Image.asset('images/look.png'),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.all(16.0),
@@ -107,7 +103,7 @@ class _LogInState extends State<LogIn> {
                                   ),
                                   FloatingActionButton(
                                     onPressed: () {
-                                      Get.to(Profile());
+                                      Get.to(() => HomePage());
                                     },
                                     backgroundColor: pageColor,
                                     child: Icon(

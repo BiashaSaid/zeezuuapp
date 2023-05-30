@@ -30,7 +30,6 @@ class Day extends StatelessWidget {
 
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(244, 229, 220, 1),
@@ -54,6 +53,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -82,7 +82,6 @@ class Day extends StatelessWidget {
             //TWO
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(245, 224, 211, 1),
@@ -106,6 +105,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -133,7 +133,6 @@ class Day extends StatelessWidget {
             //THREE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 221, 206, 1),
@@ -157,6 +156,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -188,7 +188,6 @@ class Day extends StatelessWidget {
             //FIVE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(249, 226, 211, 1),
@@ -212,6 +211,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -244,7 +244,6 @@ class Day extends StatelessWidget {
             //SIX
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 218, 200, 1),
@@ -268,6 +267,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -299,7 +299,6 @@ class Day extends StatelessWidget {
             //NINE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 197, 167, 1),
@@ -323,6 +322,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -350,7 +350,6 @@ class Day extends StatelessWidget {
             //TEN
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(247, 198, 168, 1),
@@ -374,6 +373,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -400,7 +400,6 @@ class Day extends StatelessWidget {
             ),
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(248, 191, 155, 1),
@@ -424,6 +423,7 @@ class Day extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),

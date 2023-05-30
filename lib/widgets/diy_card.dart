@@ -29,11 +29,17 @@ class Diy extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(
-              image: NetworkImage(img),
-              width: Get.width * .40,
-              height: Get.width * .40,
-            ),
+            img.toLowerCase().contains("http")
+                ? Image(
+                    image: NetworkImage(img),
+                    width: Get.width * .40,
+                    height: Get.width * .40,
+                  )
+                : Image(
+                    image: AssetImage(img),
+                    width: Get.width * .40,
+                    height: Get.width * .40,
+                  ),
             SizedBox(
               height: 15,
             ),

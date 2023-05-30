@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:zeezuu/screens/homepage.dart';
 import 'package:zeezuu/screens/profile.dart';
 
 class CreatAccount extends StatefulWidget {
@@ -59,8 +60,8 @@ class _CreatAccountState extends State<CreatAccount> {
                               children: [
                                 CircleAvatar(
                                   radius: 40,
-                                  backgroundImage: AssetImage('image/look.png'),
-                                 ),
+                                  child: Image.asset('images/look.png'),
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.all(16.0),
                                   child: Text(
@@ -101,7 +102,7 @@ class _CreatAccountState extends State<CreatAccount> {
                                 ),
                                 FloatingActionButton(
                                   onPressed: () {
-                                    Get.to(Profile());
+                                    Get.to(() => HomePage());
                                   },
                                   backgroundColor: pageColor,
                                   child: Icon(

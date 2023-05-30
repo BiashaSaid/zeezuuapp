@@ -28,17 +28,16 @@ class Night extends StatelessWidget {
         height: Get.height,
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("images/night.png"),
+              image: AssetImage("images/look.png"),
               fit: BoxFit.fitHeight,
               colorFilter: ColorFilter.mode(
-                  Color.fromRGBO(244, 229, 220, 1), BlendMode.darken)),
+                  Color.fromRGBO(244, 229, 220, 1), BlendMode.color)),
         ),
         child: ListView(
           children: [
             //ONE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(244, 229, 220, 1),
@@ -62,6 +61,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -94,7 +94,6 @@ class Night extends StatelessWidget {
             //TWO
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 226, 214, 1),
@@ -118,6 +117,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -145,7 +145,6 @@ class Night extends StatelessWidget {
             ),
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(245, 222, 208, 1),
@@ -169,6 +168,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -196,7 +196,6 @@ class Night extends StatelessWidget {
             //THREE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(243, 220, 205, 1),
@@ -220,6 +219,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -251,7 +251,6 @@ class Night extends StatelessWidget {
             //FOUR
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(244, 219, 203, 1),
@@ -275,6 +274,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -305,7 +305,6 @@ class Night extends StatelessWidget {
             //FIVE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(245, 214, 195, 1),
@@ -329,6 +328,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -359,7 +359,6 @@ class Night extends StatelessWidget {
             //SIX
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 212, 190, 1),
@@ -383,6 +382,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -413,7 +413,6 @@ class Night extends StatelessWidget {
             //SEVEN
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(246, 215, 196, 1),
@@ -437,6 +436,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -467,7 +467,6 @@ class Night extends StatelessWidget {
             //EIGHT
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(250, 213, 190, 1),
@@ -491,6 +490,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -521,7 +521,6 @@ class Night extends StatelessWidget {
             //NINE
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(248, 209, 184, 1),
@@ -545,6 +544,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),
@@ -572,7 +572,6 @@ class Night extends StatelessWidget {
             //TEN
             Container(
               width: Get.width * .6,
-              height: Get.height * .1,
               margin: EdgeInsets.all(20),
               decoration: BoxDecoration(
                   color: Color.fromRGBO(251, 206, 177, 1),
@@ -596,6 +595,7 @@ class Night extends StatelessWidget {
                   ),
                   Expanded(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Title(
                           color: Color.fromRGBO(0, 0, 0, 1),

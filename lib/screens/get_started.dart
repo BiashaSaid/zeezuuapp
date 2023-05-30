@@ -19,13 +19,10 @@ class Get_Started extends StatelessWidget {
                   Color.fromRGBO(243, 193, 161, 1), BlendMode.darken)),
         ),
         child: Column(children: [
-          Container(),
-          SizedBox(
-            height: 800,
-          ),
+          Expanded(child: Container()),
           TextButton(
             onPressed: (() {
-              Get.to(CreatAccount());
+              Get.to(() => CreatAccount());
             }),
             child: Text(
               "Get Started",
