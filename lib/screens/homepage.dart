@@ -5,7 +5,6 @@ import 'package:zeezuu/screens/single_diy.dart';
 import 'package:zeezuu/screens/favorites.dart';
 import 'package:zeezuu/screens/profile.dart';
 import 'package:zeezuu/screens/routine.dart';
-import 'package:zeezuu/screens/search.dart';
 import '../widgets/diy_card.dart';
 
 class HomePage extends StatefulWidget {
@@ -85,8 +84,6 @@ class _HomePageState extends State<HomePage> {
           items: [
             BottomNavigationBarItem(
                 icon: Icon(Icons.home_outlined), label: "Home"),
-            // BottomNavigationBarItem(
-            //     icon: Icon(Icons.search_outlined), label: "Search"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.favorite_outline_sharp), label: "Favorites"),
             BottomNavigationBarItem(

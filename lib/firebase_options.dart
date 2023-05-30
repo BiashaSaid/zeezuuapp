@@ -23,9 +23,15 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -54,29 +60,9 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCi1mW2S8zs37jjyMNx3khNnKh3sfAT9yo',
-    appId: '1:500902193890:android:ecccf5b6e34c106cb58cbb',
+    appId: '1:500902193890:android:29c0be491746f610b58cbb',
     messagingSenderId: '500902193890',
     projectId: 'biasha-said',
     storageBucket: 'biasha-said.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBlj2x6xCnYwvtEou_OehDjL_DLKBDwGnY',
-    appId: '1:500902193890:ios:cbb1d55f50d7f18fb58cbb',
-    messagingSenderId: '500902193890',
-    projectId: 'biasha-said',
-    storageBucket: 'biasha-said.appspot.com',
-    iosClientId: '500902193890-5bdlfq8ubprlu21j7sirmp95j2bnfqpe.apps.googleusercontent.com',
-    iosBundleId: 'com.example.trial',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBlj2x6xCnYwvtEou_OehDjL_DLKBDwGnY',
-    appId: '1:500902193890:ios:cbb1d55f50d7f18fb58cbb',
-    messagingSenderId: '500902193890',
-    projectId: 'biasha-said',
-    storageBucket: 'biasha-said.appspot.com',
-    iosClientId: '500902193890-5bdlfq8ubprlu21j7sirmp95j2bnfqpe.apps.googleusercontent.com',
-    iosBundleId: 'com.example.trial',
   );
 }
