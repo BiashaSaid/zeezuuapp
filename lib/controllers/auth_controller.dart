@@ -24,33 +24,34 @@ class AuthController extends GetxController {
     auth = FirebaseAuth.instance;
     firestore = FirebaseFirestore.instance;
     // initialize user
-    users = firestore.collection('users');
-    firebaseUser = Rx<User?>(auth.currentUser);
-    firebaseUserData.value = {};
+    //   users = firestore.collection('users');
+    //   firebaseUser = Rx<User?>(auth.currentUser);
+    //firebaseUserData.value = {};
     //track user data changes
-    firebaseUser.bindStream(auth.userChanges());
+    // firebaseUser.bindStream(auth.userChanges());
     //If user changes to null, send user to login screen
-    ever(firebaseUser, _setInitialScreen);
+    // ever(firebaseUser, _setInitialScreen);
   }
 
-  _setInitialScreen(User? user) async {
-    if (user == null) {
-      // if the user is not found then the user is navigated to the Register Screen
-      Get.offAll(() => const Profile());
-    } else {
-      // if the user exists and logged in the the user is navigated to the Dashboard Screen
-      Utils.showLoading(message: "Fetching Profile...");
-      var fsUser = await users.doc(user.uid).get();
-      firebaseUserData.value.addAll(
-          fsUser.data() == null ? {} : fsUser.data() as Map<String, dynamic>);
-      update();
-      Get.offAll(() => HomePage());
-      Utils.dismissLoader();
-      MainController.to.favoritesDiyRecipes.bindStream(MainController.to.favoritesDiyRecipesStream());
-      MainController.to.diyRecipes.bindStream(MainController.to.diyRecipesStream());
-      MainController.to.beautyRoutine.bindStream(MainController.to.beautyRoutineStream());
-    }
-  }
+  // _setInitialScreen(User? user) async {
+  //   if (user == null) {
+  //     // if the user is not found then the user is navigated to the Register Screen
+  //     Get.offAll(() => const Profile());
+  //   } else {
+  //     // if the user exists and logged in the the user is navigated to the Dashboard Screen
+  //     Utils.showLoading(message: "Fetching Profile...");
+  //     var fsUser = await users.doc(user.uid).get();
+  //     firebaseUserData.value.addAll(
+  //         fsUser.data() == null ? {} : fsUser.data() as Map<String, dynamic>);
+  //     update();
+  //     Get.offAll(() => HomePage());
+  //     Utils.dismissLoader();
+  //     // MainController.to.favoritesDiyRecipes.bindStream(MainController.to.favoritesDiyRecipesStream());
+  //     MainController.to.diyRecipes
+  //         .bindStream(MainController.to.diyRecipesStream());
+  //     // MainController.to.beautyRoutine.bindStream(MainController.to.beautyRoutineStream());
+  //   }
+  // }
 
   Future<bool> register(String email, String password, String name,
       String phone, List<String>? favoritedRecipes) async {
@@ -132,15 +133,16 @@ class AuthController extends GetxController {
       update();
     }
   }
+
   //unfavoriting recipes
   unfavoritedRecipes(recipeIdRemoved) async {
     var recipiesFavourited = firebaseUserData["favouritedRecipes"];
 
     (recipiesFavourited as List)
         .removeWhere((favoritedId) => favoritedId == recipeIdRemoved);
-    await users.doc(firebaseUser.value?.uid).set({
-      "favouritedRecipes": recipiesFavourited
-    });
+    await users
+        .doc(firebaseUser.value?.uid)
+        .set({"favouritedRecipes": recipiesFavourited});
 
     //update locally
     firebaseUserData["favouritedRecipes"] = recipiesFavourited;

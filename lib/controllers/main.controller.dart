@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:zeezuu/utils/utils.dart';
 
 class MainController extends GetxController {
@@ -8,13 +9,14 @@ class MainController extends GetxController {
   var firestore;
   //CREATING TABLES FOR DIYRE
   var diyRecipes = <String, dynamic>{}.obs;
-  var favoritesDiyRecipes = <String, dynamic>{}.obs;
+  var favoritesDiyRecipes = {}.obs;
   var beautyRoutine = <String, dynamic>{}.obs;
 
   //SELECTING SINGLE
   var diyRecipesSelectedId = "".obs;
   var favoritesDiyRecipesSelectedId = "".obs;
   var beautyRoutineSelectedId = "".obs;
+
   @override
   void onReady() {
     super.onReady();
@@ -22,8 +24,23 @@ class MainController extends GetxController {
 
     //Reactive list
     diyRecipes.bindStream(diyRecipesStream());
-    favoritesDiyRecipes.bindStream(favoritesDiyRecipesStream());
+    // favoritesDiyRecipes.bindStream(favoritesDiyRecipesStream());
     beautyRoutine.bindStream(beautyRoutineStream());
+
+    Box box = Hive.box("favorites");
+    favoritesDiyRecipes.value = box.toMap();
+    update();
+  }
+
+  addRemoveRecipe(id) async {
+    Box box = Hive.box("favorites");
+    if (box.containsKey(id)) {
+      await box.delete(id);
+    } else {
+      await box.put("$id", diyRecipes[id]);
+    }
+    favoritesDiyRecipes.value = box.toMap();
+    update();
   }
 
   //CREATING METHODS
@@ -137,21 +154,21 @@ class MainController extends GetxController {
     update();
   }
 
-//Fetch livestream
-  Stream<Map<String, dynamic>> favoritesDiyRecipesStream() {
-    var ref = FirebaseFirestore.instance
-        .collection('Favorite Diy Recipes')
-        .snapshots();
-    return ref.map((list) {
-      return {for (var element in list.docs) element.id: element.data()};
-    });
-  }
+// //Fetch livestream
+//   Stream<Map<String, dynamic>> favoritesDiyRecipesStream() {
+//     var ref = FirebaseFirestore.instance
+//         .collection('Favorite Diy Recipes')
+//         .snapshots();
+//     return ref.map((list) {
+//       return {for (var element in list.docs) element.id: element.data()};
+//     });
+//   }
 
-//Select Item Id
-  selectFavoriteDiyRecipes(id) {
-    favoritesDiyRecipesSelectedId.value = id;
-    update();
-  }
+// //Select Item Id
+//   selectFavoriteDiyRecipes(id) {
+//     favoritesDiyRecipesSelectedId.value = id;
+//     update();
+//   }
 
 //Fetch livestream
   Stream<Map<String, dynamic>> beautyRoutineStream() {
@@ -167,4 +184,11 @@ class MainController extends GetxController {
     beautyRoutineSelectedId.value = id;
     update();
   }
+
+  // Stream<Map<String, dynamic>> favoritesDiyRecipesStream() {
+  //   Box box = Hive.box("favorites");
+  //   return box.toMap()..map((list) {
+  //     return {for (var element in list.docs) element.id: element.data()};
+  //   });
+  // }
 }

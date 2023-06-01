@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var controller = PageController();
-  String title = "Dashboard";
+  String title = "DIY Skincare Treatments";
   int currentPage = 0;
 
   @override
@@ -29,6 +29,8 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          centerTitle: true,
           title: Text(title),
         ),
         backgroundColor: Color.fromRGBO(207, 154, 122, 1),
@@ -40,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {
                   currentPage = value;
                   if (value == 0) {
-                    title = "Dashboard";
+                    title = "DIY Skincare Treatments";
                   } else if (value == 1) {
                     title = "Favourite";
                   } else if (value == 2) {
@@ -51,7 +53,10 @@ class _HomePageState extends State<HomePage> {
                 });
               },
               controller: controller,
-              children: [Dashboard(), Favorite(), Routine(), Profile()],
+              children: [
+                Dashboard(), Favorite(), Routine(),
+                //Profile()
+              ],
             )),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentPage,
@@ -76,8 +81,8 @@ class _HomePageState extends State<HomePage> {
                 icon: Icon(Icons.favorite_outline_sharp), label: "Favorites"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month_outlined), label: "Routine"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_outline), label: "Profile"),
+            // BottomNavigationBarItem(
+            //     icon: Icon(Icons.person_outline), label: "Profile"),
           ],
         ),
       ),
@@ -93,6 +98,25 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  var _searchController = TextEditingController();
+  var searchText = "";
+  @override
+  void initState() {
+    _searchController.addListener(() {
+      setState(() {
+        searchText = _searchController.text;
+      });
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -138,15 +162,36 @@ class _DashboardState extends State<Dashboard> {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                "DIY Skincare Treatments",
-                textAlign: TextAlign.end,
-                style: TextStyle(
-                  color: Color.fromRGBO(0, 0, 0, 1),
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+              TextField(
+                controller: _searchController,
+                decoration: new InputDecoration(
+                  filled: true,
+                  fillColor: Color.fromRGBO(244, 229, 220, 1),
+                  prefixIcon: Icon(Icons.search),
+                  hintText: "Search...",
+                  hintStyle: TextStyle(fontSize: 16),
+                  contentPadding: EdgeInsets.symmetric(vertical: 10),
+                  enabledBorder: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: const BorderSide(
+                      color: Colors.grey,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
                 ),
-              ),
+              )
+              // Text(
+              //   "DIY Skincare Treatments",
+              //   textAlign: TextAlign.end,
+              //   style: TextStyle(
+              //     color: Color.fromRGBO(0, 0, 0, 1),
+              //     fontSize: 25,
+              //     fontWeight: FontWeight.bold,
+              //   ),
+              // ),
             ],
           ),
         ),
@@ -154,7 +199,7 @@ class _DashboardState extends State<Dashboard> {
         Expanded(
           child: Container(
             width: Get.width,
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: Colors.white24,
               borderRadius: BorderRadius.only(
@@ -162,20 +207,40 @@ class _DashboardState extends State<Dashboard> {
                 topRight: Radius.circular(50),
               ),
             ),
-            child: GridView.count(
-                crossAxisCount: 2,
-                children: MainController.to.diyRecipes.entries.map((diyRecipe) {
-                  return Diy(
-                    img: "${diyRecipe.value["image"]}",
-                    title: "${diyRecipe.value["title"]}",
-                    onClicked: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => SingleDiy(
+            child: ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(50),
+                topRight: Radius.circular(50),
+              ),
+              child: SingleChildScrollView(
+                padding: EdgeInsets.all(10),
+                clipBehavior: Clip.antiAlias,
+                child: Obx(() {
+                  return Wrap(
+                    alignment: WrapAlignment.spaceBetween,
+                    children: MainController.to.diyRecipes.entries
+                        .toList()
+                        .where((element) => element.value["title"]
+                            .toString()
+                            .toLowerCase()
+                            .toString()
+                            .contains(searchText.toLowerCase()))
+                        .map((diyRecipe) {
+                      return Diy2(
+                        img: "${diyRecipe.value["image"]}",
+                        title: "${diyRecipe.value["title"]}",
+                        onClicked: () {
+                          Get.to(() => SingleDiy(
                                 diyrecipe: diyRecipe.value,
-                              )));
-                    },
+                                id: diyRecipe.key,
+                              ));
+                        },
+                      );
+                    }).toList(),
                   );
-                }).toList()),
+                }),
+              ),
+            ),
           ),
         ),
       ],
