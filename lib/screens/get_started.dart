@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:zeezuu/screens/createaccount.dart';
+import 'package:zeezuu/screens/homepage.dart';
 
 class Get_Started extends StatelessWidget {
   const Get_Started({super.key});
@@ -22,7 +23,7 @@ class Get_Started extends StatelessWidget {
           Expanded(child: Container()),
           TextButton(
             onPressed: (() {
-              Get.to(() => CreatAccount());
+              Get.to(() => HomePage());
             }),
             child: Text(
               "Get Started",
@@ -46,6 +47,9 @@ class Get_Started extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(
+            height: 20,
+          )
         ]),
       ),
     );

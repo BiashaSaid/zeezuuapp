@@ -26,6 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
         padding: EdgeInsets.all(20),
         width: Get.width,
         height: Get.height,
+        alignment: Alignment.center,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/logo.png"),
