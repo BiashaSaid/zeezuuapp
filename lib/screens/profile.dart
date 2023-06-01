@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:zeezuu/screens/favorites.dart';
-import 'package:zeezuu/screens/homepage.dart';
-import 'package:zeezuu/screens/routine.dart';
-import 'package:zeezuu/screens/search.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
