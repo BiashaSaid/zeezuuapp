@@ -5,7 +5,6 @@ import 'package:zeezuu/screens/favorites.dart';
 import 'package:zeezuu/screens/homepage.dart';
 import 'package:zeezuu/screens/night.dart';
 import 'package:zeezuu/screens/profile.dart';
-import 'package:zeezuu/screens/search.dart';
 import 'package:zeezuu/widgets/diy_card.dart';
 
 class Routine extends StatelessWidget {

@@ -4,7 +4,6 @@ import 'package:zeezuu/controllers/main.controller.dart';
 import 'package:zeezuu/screens/homepage.dart';
 import 'package:zeezuu/screens/profile.dart';
 import 'package:zeezuu/screens/routine.dart';
-import 'package:zeezuu/screens/search.dart';
 import 'package:zeezuu/screens/single_diy.dart';
 import 'package:zeezuu/widgets/diy_card.dart';
 
