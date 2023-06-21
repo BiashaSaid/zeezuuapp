@@ -68,18 +68,6 @@ class _HomePageState extends State<HomePage> {
           selectedFontSize: 15,
           unselectedFontSize: 15,
           onTap: (value) {
-            //RESPOND TO ITEM PRESS
-            // if (value == 0) {
-            //   Get.to(() => HomePage());
-            // } else if (value == 1) {
-            //   Get.to(() => Search());
-            // } else if (value == 2) {
-            //   Get.to(() => Favorite());
-            // } else if (value == 3) {
-            //   Get.to(() => Routine());
-            // } else if (value == 4) {
-            //   Get.to(() => Profile());
-            // }
             setState(() {
               currentPage = value;
             });
