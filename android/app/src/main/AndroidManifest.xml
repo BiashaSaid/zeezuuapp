@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.pwaniteknowgalz.zeezuuapp">
    <application
-        android:label="trial"
+        android:label="Zeezuu"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

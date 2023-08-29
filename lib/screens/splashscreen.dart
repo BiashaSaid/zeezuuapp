@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 70), () => Get.to(() => Get_Started()));
+    Timer(Duration(seconds: 3), () => Get.to(() => Get_Started()));
     super.initState();
   }
 

@@ -16,7 +16,7 @@ Future<void> main() async {
   );
   await Hive.initFlutter("zeezuu");
   var box = await Hive.openBox('favorites');
-  box.deleteAt(0);
+ // box.deleteAt(0);
 
   runApp(const MyApp());
 }
