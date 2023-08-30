@@ -102,7 +102,8 @@ class _CreatAccountState extends State<CreatAccount> {
                                 ),
                                 FloatingActionButton(
                                   onPressed: () {
-                                    Get.to(() => HomePage());
+                                    Ge
+                                    t.to(() => HomePage());
                                   },
                                   backgroundColor: pageColor,
                                   child: Icon(
